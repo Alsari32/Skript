@@ -1,0 +1,16 @@
+WeatherLang Language Guide
+==========================
+temp → declare an integer variable
+wind -> declare an float variable
+
+forecast → output/print
+
+arithemtic operators:
+storm → x y add operation
+
+comparison operators:
+ x > y
+ x < y
+ x == y
+
+forecast → output/print
