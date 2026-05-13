@@ -1,0 +1,86 @@
+# 🌩️ WeatherLang
+
+A simulated programming language built in C++ with a weather theme.
+
+---
+
+## What Is It?
+
+WeatherLang is a custom programming language interpreter written in C++. Instead of typical keywords like `int` or `print`, WeatherLang uses weather-themed syntax — variables are declared with `temp` or `wind`, values are printed with `forecast`, and addition is done with `storm`. Under the hood, a full CPU, Memory, Output, and Input system works together to execute each line of code.
+
+---
+
+## What Can It Do?
+
+- Declare **integer** variables with `temp` and **float** variables with `wind`
+- Perform **arithmetic**: addition, subtraction, multiplication, division
+- **Print** variable values to the screen with `forecast`
+- Evaluate **comparison expressions** (`x > y` → prints true or false)
+- Use **expressive syntax** like `c = a + b` directly
+
+---
+
+## Syntax
+
+| WeatherLang Code | What It Does |
+|---|---|
+| `temp x = 5;` | Declare an integer variable |
+| `wind w = 15.5;` | Declare a float variable |
+| `forecast x;` | Print the value of x |
+| `storm x y;` | Add y into x (x = x + y) |
+| `c = a + b;` | Add a and b, store result in c |
+| `c = a - b;` | Subtract b from a, store in c |
+| `c = a * b;` | Multiply a and b, store in c |
+| `c = a / b;` | Divide a by b, store in c |
+| `c = x > y;` | Compare x and y, print true or false |
+
+---
+
+## How to Run
+
+```bash
+g++ -o weatherlang main.cpp
+./weatherlang
+```
+
+Inside `main.cpp`, send WeatherLang code using the `<<` operator:
+
+```cpp
+lang << "temp x = 5;";
+lang << "temp y = 3;";
+lang << "c = x + y;";
+lang << "forecast c;";
+// Output: 8
+```
+
+---
+
+## How It Works
+
+The language is built around 7 classes that each have a specific role:
+
+- **CPU** — handles all arithmetic and comparisons using an accumulator; the only class that reads/writes Memory directly
+- **Memory** — stores all variable values as strings using a `std::map`; converts to `int` or `float` when needed
+- **WeatherLang** — the middle man; parses each line of code and coordinates CPU and Output
+- **outPut** — prints results using a template function that works for int, float, and string
+- **inPut** — reads values from the user
+- **tempVar / WindVar** — represent integer and float variables; inherit from a shared `Variable` base class with a static counter that auto-assigns unique memory slots
+- **IO** — base class for outPut and inPut with a pure virtual `display()` function enabling polymorphism
+
+---
+
+## Concepts Demonstrated
+
+- **Object-Oriented Design** — 7 cooperating classes with clear responsibilities
+- **Inheritance** — `Variable → tempVar / WindVar` and `IO → outPut / inPut`
+- **Polymorphism** — IO pointer array calls the correct `display()` at runtime
+- **Templates** — `print<T>()` handles any data type without duplicate functions
+- **Operator Overloading** — `<<` operator lets main send code naturally: `lang << "forecast x;"`
+- **STL** — `std::map` for dynamic memory, `std::vector`, `std::string` parsing
+
+---
+
+## Built With
+
+- C++
+- Standard Template Library (STL)
