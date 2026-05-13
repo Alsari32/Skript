@@ -67,7 +67,7 @@ The language is built around 7 classes that each have a specific role:
 - **tempVar / WindVar** — represent integer and float variables; inherit from a shared `Variable` base class with a static counter that auto-assigns unique memory slots
 - **IO** — base class for outPut and inPut with a pure virtual `display()` function enabling polymorphism
 
----
+----
 
 ## Concepts Demonstrated
 
