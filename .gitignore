@@ -1,0 +1,10 @@
+# build output
+*.o
+*.exe
+*.out
+weatherlang
+
+# editor files
+.vscode/
+*.dev
+*.layout

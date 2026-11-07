@@ -1,4 +1,4 @@
-# 🌩️ WeatherLang
+# WeatherLang
 
 A simulated programming language built in C++ with a weather theme.
 
@@ -39,19 +39,24 @@ WeatherLang is a custom programming language interpreter written in C++. Instead
 ## How to Run
 
 ```bash
-g++ -o weatherlang main.cpp
+g++ -o weatherlang *.cpp
 ./weatherlang
 ```
+
+Requires a C++ compiler such as g++.
 
 Inside `main.cpp`, send WeatherLang code using the `<<` operator:
 
 ```cpp
 lang << "temp x = 5;";
 lang << "temp y = 3;";
+lang << "temp c = 0;";
 lang << "c = x + y;";
 lang << "forecast c;";
-// Output: 8
+// Output: [forecast] c = 8
 ```
+
+Declare every variable with `temp` or `wind` before using it. The full list of keywords is in [docs/LanguageGuide.txt](docs/LanguageGuide.txt).
 
 ---
 
