@@ -1,11 +1,11 @@
 WeatherLang Language Guide
 ==========================
 temp → declare an integer variable
-wind -> declare an float variable
+wind -> declare a float variable
 
 forecast → output/print
 
-arithemtic operators:
+arithmetic operators:
 storm → x y add operation
 
 comparison operators:
