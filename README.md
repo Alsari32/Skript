@@ -1,4 +1,4 @@
-# WeatherLang
+# CPU Architecture Simulator (WeatherLang)
 
 A simulated programming language built in C++ with a weather theme.
 
